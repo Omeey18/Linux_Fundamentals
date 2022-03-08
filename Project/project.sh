@@ -1,24 +1,24 @@
 #!/bin/bash 
 
 #creating 5 diffrent files here
-touch "$(date +"%F %T")_"{1..5}.txt
+touch "$(date +"%F_%T")_"{1..5}.txt
 
-#creating 3 symbolic links 
-ln -s "$(date +"%F %T")_1".txt "$(date +"%F %T")_"linked1.txt
-ln -s "$(date +"%F %T")_2".txt "$(date +"%F %T")_"linked2.txt
-ln -s "$(date +"%F %T")_3".txt "$(date +"%F %T")_"linked3.txt
-ln -s "$(date +"%F %T")_4".txt "$(date +"%F %T")_"linked4.txt
+#creating 4 symbolic links 
+for i in {1..4}
+do
+	ln -s "$(date +"%F_%T")_$i".txt "$(date +"%F_%T")_"linked$i.txt
+done
 
 #creating 1 hard link
-ln "$(date +"%F %T")_5".txt "$(date +"%F %T")_"linked5.txt
-
+ln "$(date +"%F_%T")_5".txt "$(date +"%F_%T")_"linked5.txt
 
 #removing some file to create broken links
-rm "$(date +"%F %T")_1".txt
-rm "$(date +"%F %T")_2".txt
-rm "$(date +"%F %T")_3".txt
-rm "$(date +"%F %T")_5".txt #Because it is hard link. It will not store in broken links file 
+for i in {1..5}
+do
+rm "$(date +"%F_%T")_$i".txt
+done
+#rm "$(date +"%F_%T")_5".txt is hard link. It will not be stored in broken links file. 
 
 #finding broken links and stroing into different file
-find . -xtype l > /home/ompatel/linux_Fundamentals/Project/broken_links.txt
+find . -xtype l > broken_links.txt
 
