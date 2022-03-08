@@ -1,0 +1,12 @@
+1.Write a program using file operations that demonstrates copying of data from input file
+and write into output file, untill reaches end of file data.
+2.Write a program that demonstrates repositioning of file offset using SEEK_SET,
+SEEK_END and SEEK_END.
+3. Write program that returns “ls -l ” kind of structure of information from an existing file
+or opend file.
+4.Write a program that implements all file operations(open/creat/write/read/lseek/close).
+5.Write a program that creates a file with a 4K bytes free space. (Such files are called files
+with holes.)
+6.Write a program that used to check for the existence of the file and also check whether
+we can
+open file for read , write ,execute or not.
