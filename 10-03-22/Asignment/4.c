@@ -1,5 +1,5 @@
 
-//3. A program that replaces old progra, with vim editor program and open new text file.
+//3. A program that replaces old program, with vim editor program and open new text file.
 //author Om Patel
 
 
