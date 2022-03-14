@@ -1,19 +1,27 @@
-//write a program child executed (exec()) a new program while parent waits child task to complete.
-//Author Om Patel
+//Write a program, where functions of the program are called in the reverse order of
+//their function calls from main().
+//author Om Patel
 
-#include<stdio.h>
-#include<unistd.h>
+#include <stdio.h>
+#include<stdlib.h>
 
-
-int main(){
-    int pid;
-    pid=fork();
-    if(pid==0){
-        int ret = execl("/home/ompatel/linux_Fundamentals/10-03-22/Asignment/5","./5",NULL);
-        //5 file will execute
-    }
-    else{
-        wait(0);
-        printf("Parent running");
-    }
+void display1(){
+    printf("Display 1\n");
+}
+void display2(){
+    printf("Display 2\n");
+}
+void display3(){
+    printf("Display 3\n");
+}
+void display4(){
+    printf("Display 4\n");
+}
+int main()
+{
+    atexit(display1);
+    atexit(display2);
+    atexit(display3);
+    atexit(display4);
+    return 0;
 }

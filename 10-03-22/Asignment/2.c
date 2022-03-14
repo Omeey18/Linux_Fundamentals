@@ -21,7 +21,7 @@ int main()
     else{
         //wait(NULL);
         printf("I am parent Process and id: %d\n",getpid());
-        printf("My child process id: %d\n",q);
+        printf("    My child process id: %d\n",q);
     }      
 
     return 0;

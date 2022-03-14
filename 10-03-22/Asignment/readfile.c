@@ -8,5 +8,8 @@
 #include<stdlib.h>
 
 int main(){
-     execl("/home/ompatel/linux_Fundamentals/10-03-22/Asignment/3","",0);//dont forget to typr file name inpaths
+     int ret = execl("/home/ompatel/Linux_Internals/10-03-22/Asignment/1","",0);
+    if(ret == -1){
+        printf("execl returned error %d\n", ret);
+    }
 }
