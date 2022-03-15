@@ -17,8 +17,9 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
-void main()
+int main(int argc,char *argv[])
 {
-    printf("Can you see me [one]\n");
-    execl("/home/ompatel/linux_Fundamentals/10-03-22/hello", "./hello", "hello", "om", "patel", NULL);
+   // printf("Can you see me [one]\n");
+    execlp("vim","vim",argv[1], NULL);
+    return 0;
 }

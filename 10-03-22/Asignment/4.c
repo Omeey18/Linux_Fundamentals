@@ -1,16 +1,13 @@
 
-//3. A program that replaces old program, with vim editor program and open new text file.
+//4. A program that replaces old program, with vim editor program and open new text file.
 //author Om Patel
 
 
-#include<stdio.h>
-#include<unistd.h>
+#include <stdio.h>
 
-int main(){
-    printf("This will open om.txt file\n");
-    int ret = execlp("vim","vim","om.txt",NULL);
-    if(ret == -1){
-        printf("error\n");
-    }
+
+int main(int argc,char *argv[])
+{
+    execlp("vim","vim",argv[1], NULL);
     return 0;
 }
