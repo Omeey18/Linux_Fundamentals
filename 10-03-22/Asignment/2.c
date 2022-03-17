@@ -26,6 +26,5 @@ int main()
         printf("I am parent Process and id: %d\n",getpid());
         printf("    My child process id: %d\n",q);
     }      
-
     return 0;
 }
