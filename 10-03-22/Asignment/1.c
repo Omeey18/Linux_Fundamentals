@@ -11,5 +11,5 @@ test whether the process (exec() system call) that replaces old program data, wi
 int main(){
     int fd;
     fd=open("/home/ompatel/Linux_Internals/10-03-22/Asignment/readfile",O_RDONLY,0777);
-    printf("Inherit File Descriptor: %d",fd);   
+    printf("Inherit File Descriptor: %d\n",fd);   
 }
