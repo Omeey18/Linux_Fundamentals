@@ -18,7 +18,7 @@ int main()
     size_t siz; // size_t int
     int *sch;
     struct sched_param pro;
-    int err;
+    int err;        
 
     size_t my_stksize = 0X30000000;
     void *my_stack;

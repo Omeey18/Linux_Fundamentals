@@ -2,7 +2,6 @@
 #include<pthread.h>
 
 void *method(void *num){
-    //sleep(3);
     pthread_t id;
     id = pthread_self();
     int th_id;
@@ -15,8 +14,6 @@ void *method(void *num){
         printf("thread is not cancelled\n");
     else if(a==0)
         printf("Thread is cancelled\n");
-    
-    //pthread_exit(NULL);
     return NULL;
 }
 int main()
