@@ -20,6 +20,6 @@ int main(){
 
 	atomic_dec(&v);        /* v = v + 1 = 7 (atomically) */
 	printf("%d\n", atomic_read(&v));
-	
+		
 	return 0;
 }

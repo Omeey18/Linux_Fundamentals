@@ -28,7 +28,6 @@ void *thread_dec(void *arg)
 void main()
 {
     pthread_t t1, t2;
-
     pthread_mutex_init(&my_mutex,NULL);//initlize
     pthread_create(&t1, NULL, thread_inc, NULL);
     pthread_create(&t2, NULL, thread_dec, NULL);
