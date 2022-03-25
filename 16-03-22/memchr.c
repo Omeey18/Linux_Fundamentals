@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<string.h>
+#include <string.h>
 
 int main()
 {
@@ -8,7 +8,7 @@ int main()
     char *ret;
     printf("String before set is %s\n",str);
     ret = memchr(str,ch,strlen(str));
-    mem
+
     printf("String after **%c** set is :**%s**\n",ch,ret+1);    
     return 0;
 }
