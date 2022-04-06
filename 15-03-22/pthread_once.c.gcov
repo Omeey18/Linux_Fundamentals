@@ -1,0 +1,32 @@
+        -:    0:Source:pthread_once.c
+        -:    0:Graph:pthread_once.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1:#include <stdio.h>
+        -:    2:#include <pthread.h>
+        -:    3:
+        -:    4:pthread_once_t once = PTHREAD_ONCE_INIT;//declaring variable
+        -:    5:
+    #####:    6:void *myinit(){//init pointer function
+    #####:    7:    printf("I am a init func\n");
+    #####:    8:}
+        -:    9:
+    #####:   10:void *mythread(void *i){
+    #####:   11:    printf("I am a my thread: %d \n",(int *)i);
+    #####:   12:    pthread_once(&once,(void *)myinit);//calling thread once func 
+        -:   13:                                        //but it will call only once time
+    #####:   14:    printf("Exit from my thread: %d\n",(int *)i);
+    #####:   15:}
+        -:   16:
+    #####:   17:int main()
+        -:   18:{
+        -:   19:    pthread_t thread,thread1, thread2;
+    #####:   20:    pthread_create(&thread,NULL,mythread,(void*)1);
+    #####:   21:    pthread_create(&thread1,NULL,mythread,(void*)2);
+    #####:   22:    pthread_create(&thread2,NULL,mythread,(void*)3);
+    #####:   23:    sleep(1);
+    #####:   24:    printf("Exit from main func\n");
+    #####:   25:    pthread_exit(NULL);
+        -:   26:    return 0;
+        -:   27:}
